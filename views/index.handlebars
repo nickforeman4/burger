@@ -1,0 +1,29 @@
+<div class = "jumbotron">Burgers</div>
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-4">
+            <label>Enter Burger Name</label>
+            <input id = "inputBurger" type = "text">
+            <button id = "addBurger">Add Burger</button>
+            </button>
+        </div>
+        <div class = "col-md-4">
+            <h1>Burgers Are Ready</h1>
+            {{#each burgerData}}
+                {{#unless this.devoured}}
+                <p>{{this.burger_name}}</p>
+                <button id = {{this.id}} class = "updateBurger btn-dark">Eat It!</button>
+                {{/unless}}
+            {{/each}}
+        </div>
+        <div class = "col-md-4">
+            <h1>Burgers Devoured</h1>
+            {{#each burgerData}}
+                {{#if this.devoured}}
+                <p>{{this.burger_name}}</p>
+                <button id = {{this.id}} class = "deleteBurger btn-dark">Eat It!</button>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+</div>
