@@ -59,7 +59,11 @@ This is a burger logger that utilizs MySQL, Node, Express, Handlebars and an ORM
 
 ## Usage
 
-![Screenshot of "My Team" Page](employeeTracker.JPG)
+![Screenshot of "Home" Page](burgerHome.JPG)
+
+![Screenshot of "Adding Burgers" Page](burgerHome.JPG)
+
+![Screenshot of "Devouring Burgers" Page](burgerHome.JPG)
 
 
 ## License
