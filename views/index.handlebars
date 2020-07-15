@@ -1,5 +1,6 @@
-<div class = "jumbotron">Burgers</div>
-<div class = "container">
+<div class = "jumbotron bg-primary">
+    <h1 style="color: white">Eat-Da-Burger!</h1></div>
+<div class = "container bg-warning">
     <div class = "row">
         <div class = "col-md-4">
             <label>Enter Burger Name</label>
@@ -7,7 +8,7 @@
             <button id = "addBurger">Add Burger</button>
             </button>
         </div>
-        <div class = "col-md-4">
+        <div id = "readyBurger" class = "col-md-4">
             <h1>Burgers Are Ready</h1>
             {{#each burgerData}}
                 {{#unless this.devoured}}
@@ -16,12 +17,12 @@
                 {{/unless}}
             {{/each}}
         </div>
-        <div class = "col-md-4">
+        <div id = "eatenBurger" class = "col-md-4">
             <h1>Burgers Devoured</h1>
             {{#each burgerData}}
                 {{#if this.devoured}}
                 <p>{{this.burger_name}}</p>
-                <button id = {{this.id}} class = "deleteBurger btn-dark">Eat It!</button>
+                <button id = {{this.id}} class = "deleteBurger btn-danger">Delete It!</button>
                 {{/if}}
             {{/each}}
         </div>
