@@ -37,7 +37,7 @@ $("#addBurger").on("click", function() {
 $.ajax({
     method: "GET",
     url: "/api/burgers/",
-    }).then(function(data) {
+}).then(function(data) {
     console.log(data)
     location.reload()
-})
+});
