@@ -1,10 +1,9 @@
 console.log("Javascript File")
 
 $("#readyBurger").on("click", ".updateBurger", function() {
-    var id = $(this).attr("id")
-    $.ajax({
-        method: "PUT",
-        url: "/api/burgers/" + id,
+    var id = $(this).data("id")
+    $.ajax("/api/burgers/" + id, {
+        type: "PUT"
     }).then(function(data) {
         console.log(data)
         location.reload()
@@ -12,10 +11,9 @@ $("#readyBurger").on("click", ".updateBurger", function() {
 });
 
 $("#eatenBurger").on("click", ".deleteBurger", function() {
-    var id = $(this).attr("id")
-    $.ajax({
-        method: "DELETE",
-        url: "/api/burgers/" + id,
+    var id = $(this).data("id")
+    $.ajax("/api/burgers/" + id, {
+        type: "DELETE"
     }).then(function(data) {
         console.log(data)
         location.reload()
@@ -24,9 +22,8 @@ $("#eatenBurger").on("click", ".deleteBurger", function() {
 
 $("#addBurger").on("click", function() {
     var burger_name = $("#inputBurger").val()
-    $.ajax({
+    $.ajax("/api/burgers/", {
         method: "POST",
-        url: "/api/burgers/",
         data: {name: burger_name}
     }).then(function(data) {
         console.log(data)
@@ -34,9 +31,8 @@ $("#addBurger").on("click", function() {
     })
 });
 
-$.ajax({
-    method: "GET",
-    url: "/api/burgers/",
+$.ajax("/api/burgers/", {
+    method: "GET"
 }).then(function(data) {
     console.log(data)
     location.reload()
