@@ -1,5 +1,6 @@
 <div class = "jumbotron bg-primary">
     <h1 style="color: white">Eat-Da-Burger!</h1>
+    <img class="burgerPic" src="/public/assets/burger.png"></img>
 </div>
 
 <div class = "container bg-warning">
@@ -12,7 +13,7 @@
         </div>
         <div id = "readyBurger" class = "col-md-4">
             <h1>Burgers Are Ready</h1>
-            {{#each burgers}}
+            {{#each burgerData}}
                 {{#unless this.devoured}}
                 <p>{{this.burger_name}}</p>
                 <button id = {{this.id}} class = "updateBurger btn-dark">Eat It!</button>
@@ -21,7 +22,7 @@
         </div>
         <div id = "eatenBurger" class = "col-md-4">
             <h1>Burgers Devoured</h1>
-            {{#each burgers}}
+            {{#each burgerData}}
                 {{#if this.devoured}}
                 <p>{{this.burger_name}}</p>
                 <button id = {{this.id}} class = "deleteBurger btn-danger">Delete It!</button>

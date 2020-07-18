@@ -31,9 +31,8 @@ $("#addBurger").on("click", function() {
     })
 });
 
-$.ajax("/api/burgers/", {
+$.ajax("/api/burgers", {
     method: "GET"
 }).then(function(data) {
     console.log(data)
-    location.reload()
 });
