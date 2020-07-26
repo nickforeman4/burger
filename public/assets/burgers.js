@@ -1,7 +1,8 @@
 console.log("Javascript File")
 
 $("#readyBurger").on("click", ".updateBurger", function() {
-    var id = $(this).data("id")
+    var id = $(this).attr("id")
+    console.log("id")
     $.ajax("/api/burgers/" + id, {
         type: "PUT"
     }).then(function(data) {
@@ -11,7 +12,8 @@ $("#readyBurger").on("click", ".updateBurger", function() {
 });
 
 $("#eatenBurger").on("click", ".deleteBurger", function() {
-    var id = $(this).data("id")
+    var id = $(this).attr("id")
+    console.log("id", id)
     $.ajax("/api/burgers/" + id, {
         type: "DELETE"
     }).then(function(data) {
